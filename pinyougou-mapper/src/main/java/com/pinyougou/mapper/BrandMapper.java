@@ -1,18 +1,16 @@
 package com.pinyougou.mapper;
 
+import tk.mybatis.mapper.common.Mapper;
+
 import com.pinyougou.pojo.Brand;
 
-import java.util.List;
-
 /**
- * 品牌数据访问接口
- *
- * @author lee.siu.wah
+ * BrandMapper 数据访问接口
+ * @date 2018-08-30 18:18:54
  * @version 1.0
- * <p>File Created at 2017-12-28<p>
  */
-public interface BrandMapper {
+public interface BrandMapper extends Mapper<Brand>{
 
-//    @Select("SELECT * FROM tb_brand ORDER BY id ASC ")
-    List<Brand> findAll();
+
+
 }

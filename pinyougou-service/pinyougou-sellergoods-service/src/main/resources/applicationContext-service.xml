@@ -22,7 +22,9 @@
     <!--用dubbo协议在20880端口暴露服务-->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!--暴露需要配置的服务接口-->
-    <dubbo:service interface="com.pinyougou.service.BrandService" ref="brandService"/>
-    <!--配置服务接口实现类-->
-    <bean id="brandService" class="com.pinyougou.sellergoods.service.impl.BrandServiceImpl"/>
+    <!--<dubbo:service interface="com.pinyougou.service.BrandService" ref="brandService"/>
+    &lt;!&ndash;配置服务接口实现类&ndash;&gt;
+    <bean id="brandService" class="com.pinyougou.sellergoods.service.impl.BrandServiceImpl"/>-->
+    <!-- 配置采用包扫描来暴露服务 -->
+    <dubbo:annotation package="com.pinyougou.sellergoods.service.impl"/>
 </beans>

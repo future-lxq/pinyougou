@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--开启组件扫描-->
-    <context:component-scan base-package="com.pinyougou.manager.controller"/>
+    <!--<context:component-scan base-package="com.pinyougou.manager.controller"/>-->
 
     <!--开启mvc注解驱动-->
     <mvc:annotation-driven>
@@ -34,6 +34,8 @@
     <dubbo:application name="pinyougou-manager-web"/>
     <!--配置zookeeper作为注册中心,注册服务地址-->
     <dubbo:registry protocol="zookeeper" address="192.168.12.131:2181"/>
-    <!--生成远程服务接口代理,可以使用远程的类-->
-    <dubbo:reference id="brandService" interface="com.pinyougou.service.BrandService"/>
+    <!--&lt;!&ndash;生成远程服务接口代理,可以使用远程的类&ndash;&gt;
+    <dubbo:reference id="brandService" interface="com.pinyougou.service.BrandService"/>-->
+    <!-- 配置采用包扫描来引用服务， 产生服务接口的代理对象 -->
+    <dubbo:annotation package="com.pinyougou.manager.controller"/>
 </beans>
